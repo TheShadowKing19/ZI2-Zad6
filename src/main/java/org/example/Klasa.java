@@ -14,14 +14,15 @@ public class Klasa {
 
     private int Level;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "klasa")
     List<Student> students;
 
     @OneToOne(cascade = CascadeType.ALL)
     Teacher teacher;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "klasa")
     List<Subject> subjects;
+
 
     public long getId() {
         return id;
@@ -49,5 +50,13 @@ public class Klasa {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
     }
 }

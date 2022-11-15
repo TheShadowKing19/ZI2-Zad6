@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Student {
@@ -15,6 +12,9 @@ public class Student {
     private String FirstName;
 
     private String LastName;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    Klasa klasa;
 
     public Student(String firstName, String lastName) {
         FirstName = firstName;

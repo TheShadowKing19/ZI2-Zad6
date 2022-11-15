@@ -14,5 +14,14 @@ public class Subject {
     @ManyToOne(cascade = CascadeType.ALL)
     Teacher teacher;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    Klasa klasa;
 
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
 }

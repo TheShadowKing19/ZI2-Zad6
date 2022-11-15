@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -18,7 +15,8 @@ public class Teacher {
 
     private String LastName;
 
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "teacher")
+    List<Subject> subjects;
 
     public long getId() {
         return id;
