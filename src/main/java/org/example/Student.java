@@ -25,6 +25,14 @@ public class Student {
 
     }
 
+    public Klasa getKlasa() {
+        return klasa;
+    }
+
+    public void setKlasa(Klasa klasa) {
+        this.klasa = klasa;
+    }
+
     public long getId() {
         return id;
     }

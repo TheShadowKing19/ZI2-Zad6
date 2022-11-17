@@ -17,7 +17,7 @@ public class Klasa {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "klasa")
     List<Student> students;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "klasa")
     Teacher teacher;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "klasa")
@@ -58,5 +58,13 @@ public class Klasa {
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 }
